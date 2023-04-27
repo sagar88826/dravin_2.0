@@ -2,7 +2,6 @@ const app = require('./app')
 const mongoose = require("mongoose")
 const cloudinary = require("cloudinary").v2
 require('dotenv').config()
-console.log(process.env)
 
 cloudinary.config({
     cloud_name: process.env.CLOUD_NAME,
