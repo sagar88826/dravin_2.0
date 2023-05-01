@@ -10,7 +10,8 @@ const app = express()
 app.use(express.json())
 app.use(cookieParser())
 app.use(fileupload({
-    useTempFiles: true
+    useTempFiles: true,
+    tempFileDir: "/tmp"
 }))
 app.use(express.static(path.join(__dirname, "build")))
 app.get("/search", (req, res) => {
@@ -20,6 +21,9 @@ app.get("/mypost", (req, res) => {
     res.sendFile(path.join(__dirname, "./build/index.html"))
 })
 app.get("/profile", (req, res) => {
+    res.sendFile(path.join(__dirname, "./build/index.html"))
+})
+app.get("/register", (req, res) => {
     res.sendFile(path.join(__dirname, "./build/index.html"))
 })
 
